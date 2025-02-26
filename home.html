@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdeddaim Farid | Conseil en Management et Coaching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <!-- Logo placeholder -->
+                        <div class="h-10 w-10 bg-primary-600 dark:bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">AF</div>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#home" class="nav-link border-primary-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Accueil" data-en="Home" data-ar="الرئيسية">Accueil</a>
+                        <a href="#services" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a>
+                        <a href="#courses" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Cours" data-en="Courses" data-ar="الدورات">Cours</a>
+                        <a href="#formations" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a>
+                        <a href="#contact" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <!-- Language Selector -->
+                    <div class="relative mr-4">
+                        <select id="language-selector" class="appearance-none bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800 focus:border-primary-500">
+                            <option value="fr">Français</option>
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="flex items-center justify-center h-10 w-10 rounded-full focus:outline-none">
+                        <i class="fas fa-moon text-gray-600 dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-300 hidden dark:block"></i>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="ml-2 flex items-center sm:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="sm:hidden hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="nav-link bg-primary-50 dark:bg-gray-700 border-primary-500 text-primary-700 dark:text-white block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Accueil" data-en="Home" data-ar="الرئيسية">Accueil</a>
+                <a href="#services" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="#courses" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Cours" data-en="Courses" data-ar="الدورات">Cours</a>
+                <a href="#formations" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a>
+                <a href="#contact" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white pt-16 pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="md:w-1/2">
+                        <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-4 lang-element" data-fr="ABDEDDAIM FARID" data-en="ABDEDDAIM FARID" data-ar="عبد الدايم فريد">ABDEDDAIM FARID</h1>
+                        <p class="text-xl sm:text-2xl mb-4 font-medium lang-element" data-fr="AUTO ENTREPRENEUR" data-en="SELF-EMPLOYED ENTREPRENEUR" data-ar="رائد أعمال مستقل">AUTO ENTREPRENEUR</p>
+                        <p class="text-lg sm:text-xl mb-8 font-medium lang-element" data-fr="CONSEIL EN MANAGEMENT ET COACHING" data-en="MANAGEMENT CONSULTING AND COACHING" data-ar="استشارات الإدارة والتدريب">CONSEIL EN MANAGEMENT ET COACHING</p>
+                        <div class="flex space-x-4">
+                            <a href="#contact" class="bg-white text-primary-600 hover:bg-primary-50 font-bold px-6 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 lang-element" data-fr="Me Contacter" data-en="Contact Me" data-ar="اتصل بي">Me Contacter</a>
+                            <a href="#services" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold px-6 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 lang-element" data-fr="Mes Services" data-en="My Services" data-ar="خدماتي">Mes Services</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+                        <!-- Profile picture placeholder -->
+                        <div class="w-64 h-64 bg-white rounded-full shadow-2xl overflow-hidden border-4 border-white">
+                            <!-- Replace with actual image -->
+                            <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                                <span class="text-gray-600 text-6xl">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative elements -->
+            <div class="absolute right-0 top-0 h-full w-1/3 bg-opacity-10 bg-white transform rotate-12 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute left-0 bottom-0 h-full w-1/3 bg-opacity-10 bg-white transform -rotate-12 -translate-x-1/3 translate-y-1/4"></div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Mes Services" data-en="My Services" data-ar="خدماتي">Mes Services</h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto lang-element" data-fr="Expertise professionnelle en gestion et développement personnel" data-en="Professional expertise in management and personal development" data-ar="خبرة مهنية في الإدارة والتطوير الشخصي">Expertise professionnelle en gestion et développement personnel</p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-5">
+                                <i class="fas fa-briefcase text-primary-600 dark:text-primary-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 lang-element" data-fr="Conseil en Management" data-en="Management Consulting" data-ar="استشارات إدارية">Conseil en Management</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Stratégies personnalisées pour optimiser la performance de votre entreprise et atteindre vos objectifs commerciaux." data-en="Customized strategies to optimize your company's performance and achieve your business goals." data-ar="استراتيجيات مخصصة لتحسين أداء شركتك وتحقيق أهدافك التجارية.">Stratégies personnalisées pour optimiser la performance de votre entreprise et atteindre vos objectifs commerciaux.</p>
+                            <a href="#contact" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 inline-flex items-center lang-element" data-fr="En savoir plus" data-en="Learn more" data-ar="اكتشف المزيد">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-5">
+                                <i class="fas fa-users text-primary-600 dark:text-primary-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 lang-element" data-fr="Coaching Professionnel" data-en="Professional Coaching" data-ar="التدريب المهني">Coaching Professionnel</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Accompagnement personnalisé pour développer votre potentiel et atteindre vos objectifs de carrière." data-en="Personalized guidance to develop your potential and achieve your career goals." data-ar="توجيه شخصي لتطوير إمكاناتك وتحقيق أهدافك المهنية.">Accompagnement personnalisé pour développer votre potentiel et atteindre vos objectifs de carrière.</p>
+                            <a href="#contact" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 inline-flex items-center lang-element" data-fr="En savoir plus" data-en="Learn more" data-ar="اكتشف المزيد">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-5">
+                                <i class="fas fa-chalkboard-teacher text-primary-600 dark:text-primary-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 lang-element" data-fr="Ateliers et Séminaires" data-en="Workshops and Seminars" data-ar="ورش عمل وندوات">Ateliers et Séminaires</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Sessions interactives de formation pour les équipes et les organisations, adaptées à vos besoins spécifiques." data-en="Interactive training sessions for teams and organizations, tailored to your specific needs." data-ar="جلسات تدريبية تفاعلية للفرق والمؤسسات، مصممة لتلبية احتياجاتك الخاصة.">Sessions interactives de formation pour les équipes et les organisations, adaptées à vos besoins spécifiques.</p>
+                            <a href="#contact" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 inline-flex items-center lang-element" data-fr="En savoir plus" data-en="Learn more" data-ar="اكتشف المزيد">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Cours" data-en="Courses" data-ar="الدورات">Cours</h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto lang-element" data-fr="Programmes d'apprentissage structurés pour développer vos compétences" data-en="Structured learning programs to develop your skills" data-ar="برامج تعليمية منظمة لتطوير مهاراتك">Programmes d'apprentissage structurés pour développer vos compétences</p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Course 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-300 dark:bg-gray-700">
+                            <!-- Course image placeholder -->
+                            <div class="w-full h-full flex items-center justify-center">
+                                <i class="fas fa-chart-line text-gray-500 dark:text-gray-400 text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 text-sm font-medium px-3 py-1 rounded-full lang-element" data-fr="Management" data-en="Management" data-ar="الإدارة">Management</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm">12 semaines</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 lang-element" data-fr="Leadership Stratégique" data-en="Strategic Leadership" data-ar="القيادة الاستراتيجية">Leadership Stratégique</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Développez vos compétences en leadership et apprenez à diriger efficacement une équipe vers des objectifs stratégiques." data-en="Develop your leadership skills and learn how to effectively lead a team towards strategic goals." data-ar="طور مهاراتك القيادية وتعلم كيفية قيادة فريق بفعالية نحو الأهداف الاستراتيجية.">Développez vos compétences en leadership et apprenez à diriger efficacement une équipe vers des objectifs stratégiques.</p>
+                            <a href="#contact" class="block text-center bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors lang-element" data-fr="S'inscrire" data-en="Register" data-ar="التسجيل">S'inscrire</a>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-300 dark:bg-gray-700">
+                            <!-- Course image placeholder -->
+                            <div class="w-full h-full flex items-center justify-center">
+                                <i class="fas fa-comments text-gray-500 dark:text-gray-400 text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 text-sm font-medium px-3 py-1 rounded-full lang-element" data-fr="Communication" data-en="Communication" data-ar="التواصل">Communication</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm">8 semaines</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 lang-element" data-fr="Communication Efficace" data-en="Effective Communication" data-ar="التواصل الفعال">Communication Efficace</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Améliorez vos compétences en communication pour des relations professionnelles plus productives et des présentations percutantes." data-en="Improve your communication skills for more productive professional relationships and impactful presentations." data-ar="حسّن مهارات التواصل لديك لعلاقات مهنية أكثر إنتاجية وعروض تقديمية مؤثرة.">Améliorez vos compétences en communication pour des relations professionnelles plus productives et des présentations percutantes.</p>
+                            <a href="#contact" class="block text-center bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors lang-element" data-fr="S'inscrire" data-en="Register" data-ar="التسجيل">S'inscrire</a>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-300 dark:bg-gray-700">
+                            <!-- Course image placeholder -->
+                            <div class="w-full h-full flex items-center justify-center">
+                                <i class="fas fa-brain text-gray-500 dark:text-gray-400 text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 text-sm font-medium px-3 py-1 rounded-full lang-element" data-fr="Développement Personnel" data-en="Personal Development" data-ar="التطوير الشخصي">Développement Personnel</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm">6 semaines</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 lang-element" data-fr="Intelligence Émotionnelle" data-en="Emotional Intelligence" data-ar="الذكاء العاطفي">Intelligence Émotionnelle</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Découvrez comment reconnaître et gérer vos émotions et celles des autres pour des interactions plus harmonieuses." data-en="Discover how to recognize and manage your emotions and those of others for more harmonious interactions." data-ar="اكتشف كيفية التعرف على عواطفك وعواطف الآخرين وإدارتها من أجل تفاعلات أكثر انسجامًا.">Découvrez comment reconnaître et gérer vos émotions et celles des autres pour des interactions plus harmonieuses.</p>
+                            <a href="#contact" class="block text-center bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors lang-element" data-fr="S'inscrire" data-en="Register" data-ar="التسجيل">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formations Section -->
+        <section id="formations" class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Formations" data-en="Training Programs" data-ar="برامج التدريب">Formations</h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto lang-element" data-fr="Programmes intensifs pour les professionnels et les entreprises" data-en="Intensive programs for professionals and businesses" data-ar="برامج مكثفة للمحترفين والشركات">Programmes intensifs pour les professionnels et les entreprises</p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Formation 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:w-1/3 bg-gray-300 dark:bg-gray-600">
+                                <!-- Formation image placeholder -->
+                                <div class="w-full h-full min-h-[200px] flex items-center justify-center">
+                                    <i class="fas fa-users-cog text-gray-500 dark:text-gray-400 text-5xl"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3 p-6 md:p-8">
+                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 lang-element" data-fr="Gestion d'Équipe et Leadership" data-en="Team Management and Leadership" data-ar="إدارة الفريق والقيادة">Gestion d'Équipe et Leadership</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">3 jours</span>
+                                    <span class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">En présentiel</span>
+                                    <span class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">Certification</span>
+                                </div>
+                        
+                                <p class="text-gray-600 dark:text-gray-300 mb-6 lang-element" data-fr="Formation intensive destinée aux managers et chefs d'équipe souhaitant développer leurs compétences en leadership et en gestion d'équipe. Techniques avancées de motivation, résolution de conflits et prise de décision stratégique." data-en="Intensive training for managers and team leaders wishing to develop their leadership and team management skills. Advanced techniques in motivation, conflict resolution, and strategic decision-making." data-ar="تدريب مكثف للمديرين وقادة الفرق الراغبين في تطوير مهاراتهم في القيادة و
+                                
+                                إدارة الفريق. تقنيات متقدمة في التحفيز وحل النزاعات واتخاذ القرارات الاستراتيجية.">Formation intensive destinée aux managers et chefs d'équipe souhaitant développer leurs compétences en leadership et en gestion d'équipe. Techniques avancées de motivation, résolution de conflits et prise de décision stratégique.</p>
+                               <a href="#contact" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-lg transition-colors lang-element" data-fr="Demander un devis" data-en="Request a quote" data-ar="طلب عرض أسعار">Demander un devis</a>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Formation 2 -->
+                   <div class="bg-gray-50 dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                       <div class="md:flex">
+                           <div class="md:w-1/3 bg-gray-300 dark:bg-gray-600">
+                               <!-- Formation image placeholder -->
+                               <div class="w-full h-full min-h-[200px] flex items-center justify-center">
+                                   <i class="fas fa-business-time text-gray-500 dark:text-gray-400 text-5xl"></i>
+                               </div>
+                           </div>
+                           <div class="md:w-2/3 p-6 md:p-8">
+                               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 lang-element" data-fr="Transformation Digitale pour Entreprises" data-en="Digital Transformation for Businesses" data-ar="التحول الرقمي للشركات">Transformation Digitale pour Entreprises</h3>
+                               <div class="flex flex-wrap gap-2 mb-4">
+                                   <span class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">5 jours</span>
+                                   <span class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">Hybride</span>
+                                   <span class="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">Accompagnement</span>
+                               </div>
+                               <p class="text-gray-600 dark:text-gray-300 mb-6 lang-element" data-fr="Programme complet pour accompagner les entreprises dans leur transition numérique. Analyse des besoins, élaboration de stratégies digitales, formation des équipes et mise en œuvre de solutions adaptées." data-en="Comprehensive program to support businesses in their digital transition. Needs analysis, development of digital strategies, team training, and implementation of tailored solutions." data-ar="برنامج شامل لدعم الشركات في تحولها الرقمي. تحليل الاحتياجات، وتطوير استراتيجيات رقمية، وتدريب الفريق، وتنفيذ حلول مخصصة.">Programme complet pour accompagner les entreprises dans leur transition numérique. Analyse des besoins, élaboration de stratégies digitales, formation des équipes et mise en œuvre de solutions adaptées.</p>
+                               <a href="#contact" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-lg transition-colors lang-element" data-fr="Demander un devis" data-en="Request a quote" data-ar="طلب عرض أسعار">Demander un devis</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- Contact Section -->
+       <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+               <div class="text-center mb-16">
+                   <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</h2>
+                   <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto lang-element" data-fr="Prenez contact pour discuter de vos besoins en conseil et formation" data-en="Get in touch to discuss your consulting and training needs" data-ar="تواصل معنا لمناقشة احتياجاتك الاستشارية والتدريبية">Prenez contact pour discuter de vos besoins en conseil et formation</p>
+               </div>
+
+               <div class="lg:flex lg:gap-12">
+                   <div class="lg:w-1/2 mb-12 lg:mb-0">
+                       <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8">
+                           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 lang-element" data-fr="Envoyez-moi un message" data-en="Send me a message" data-ar="أرسل لي رسالة">Envoyez-moi un message</h3>
+                           <form>
+                               <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                   <div>
+                                       <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 lang-element" data-fr="Nom" data-en="Name" data-ar="الاسم">Nom</label>
+                                       <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                   </div>
+                                   <div>
+                                       <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 lang-element" data-fr="Email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                                       <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                   </div>
+                                   <div class="sm:col-span-2">
+                                       <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 lang-element" data-fr="Sujet" data-en="Subject" data-ar="الموضوع">Sujet</label>
+                                       <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                   </div>
+                                   <div class="sm:col-span-2">
+                                       <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 lang-element" data-fr="Message" data-en="Message" data-ar="الرسالة">Message</label>
+                                       <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+                                   </div>
+                                   <div class="sm:col-span-2">
+                                       <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors lang-element" data-fr="Envoyer" data-en="Send" data-ar="إرسال">Envoyer</button>
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+
+                   <div class="lg:w-1/2">
+                       <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8">
+                           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 lang-element" data-fr="Informations de contact" data-en="Contact information" data-ar="معلومات الاتصال">Informations de contact</h3>
+                           <div class="space-y-6">
+                               <div class="flex items-start">
+                                   <div class="flex-shrink-0">
+                                       <div class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                                           <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                                       </div>
+                                   </div>
+                                   <div class="ml-4">
+                                       <p class="text-sm font-medium text-gray-900 dark:text-white lang-element" data-fr="Adresse" data-en="Address" data-ar="العنوان">Adresse</p>
+                                       <p class="mt-1 text-gray-600 dark:text-gray-300">32, CITE DES 52 LOGTS AIN TEBINET SETIF ALGERIE</p>
+                                   </div>
+                               </div>
+                               <div class="flex items-start">
+                                   <div class="flex-shrink-0">
+                                       <div class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                                           <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                                       </div>
+                                   </div>
+                                   <div class="ml-4">
+                                       <p class="text-sm font-medium text-gray-900 dark:text-white lang-element" data-fr="Email" data-en="Email" data-ar="البريد الإلكتروني">Email</p>
+                                       <a href="mailto:Faridabdeddaim@hotmail.fr" class="mt-1 text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300">Faridabdeddaim@hotmail.fr</a>
+                                   </div>
+                               </div>
+                               <div class="flex items-start">
+                                   <div class="flex-shrink-0">
+                                       <div class="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                                           <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
+                                       </div>
+                                   </div>
+                                   <div class="ml-4">
+                                       <p class="text-sm font-medium text-gray-900 dark:text-white lang-element" data-fr="Téléphone" data-en="Phone" data-ar="الهاتف">Téléphone</p>
+                                       <a href="tel:0549161883" class="mt-1 text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300">0549 161 883</a>
+                                   </div>
+                               </div>
+                               <div class="pt-4">
+                                   <p class="text-sm font-medium text-gray-900 dark:text-white mb-3 lang-element" data-fr="Suivez-moi" data-en="Follow me" data-ar="تابعني">Suivez-moi</p>
+                                   <div class="flex space-x-4">
+                                       <a href="#" class="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">
+                                           <i class="fab fa-linkedin text-xl"></i>
+                                       </a>
+                                       <a href="#" class="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">
+                                           <i class="fab fa-twitter text-xl"></i>
+                                       </a>
+                                       <a href="#" class="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">
+                                           <i class="fab fa-facebook text-xl"></i>
+                                       </a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="mt-8 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden h-64">
+                           <!-- Map placeholder - replace with actual map if needed -->
+                           <div class="w-full h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+                               <i class="fas fa-map text-gray-500 dark:text-gray-400 text-5xl"></i>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+   </main>
+
+   <!-- Footer -->
+   <footer class="bg-gray-800 dark:bg-gray-950 text-white py-12">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div class="md:flex md:justify-between">
+               <div class="mb-8 md:mb-0">
+                   <div class="flex items-center">
+                       <div class="h-10 w-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">AF</div>
+                       <span class="text-xl font-bold">ABDEDDAIM FARID</span>
+                   </div>
+                   <p class="mt-4 max-w-md text-gray-400 lang-element" data-fr="Conseil en management et coaching professionnel pour vous aider à atteindre vos objectifs personnels et d'entreprise." data-en="Management consulting and professional coaching to help you achieve your personal and business goals." data-ar="استشارات إدارية وتدريب مهني لمساعدتك على تحقيق أهدافك الشخصية والتجارية.">Conseil en management et coaching professionnel pour vous aider à atteindre vos objectifs personnels et d'entreprise.</p>
+               </div>
+               <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                   <div>
+                       <h3 class="text-sm font-semibold uppercase tracking-wider lang-element" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</h3>
+                       <ul class="mt-4 space-y-2">
+                           <li><a href="#services" class="text-gray-400 hover:text-white transition-colors lang-element" data-fr="Conseil" data-en="Consulting" data-ar="الاستشارات">Conseil</a></li>
+                           <li><a href="#services" class="text-gray-400 hover:text-white transition-colors lang-element" data-fr="Coaching" data-en="Coaching" data-ar="التدريب">Coaching</a></li>
+                           <li><a href="#services" class="text-gray-400 hover:text-white transition-colors lang-element" data-fr="Ateliers" data-en="Workshops" data-ar="ورش العمل">Ateliers</a></li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h3 class="text-sm font-semibold uppercase tracking-wider lang-element" data-fr="Programmes" data-en="Programs" data-ar="البرامج">Programmes</h3>
+                       <ul class="mt-4 space-y-2">
+                           <li><a href="#courses" class="text-gray-400 hover:text-white transition-colors lang-element" data-fr="Cours" data-en="Courses" data-ar="الدورات">Cours</a></li>
+                           <li><a href="#formations" class="text-gray-400 hover:text-white transition-colors lang-element" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a></li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h3 class="text-sm font-semibold uppercase tracking-wider lang-element" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</h3>
+                       <ul class="mt-4 space-y-2">
+                           <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors lang-element" data-fr="Nous contacter" data-en="Contact us" data-ar="اتصل بنا">Nous contacter</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           <div class="pt-8 mt-8 border-t border-gray-700 md:flex md:items-center md:justify-between">
+               <div class="flex space-x-6 md:order-2">
+                   <a href="#" class="text-gray-400 hover:text-white">
+                       <i class="fab fa-linkedin"></i>
+                   </a>
+                   <a href="#" class="text-gray-400 hover:text-white">
+                       <i class="fab fa-twitter"></i>
+                   </a>
+                   <a href="#" class="text-gray-400 hover:text-white">
+                       <i class="fab fa-facebook"></i>
+                   </a>
+               </div>
+               <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+                   &copy; <span id="current-year">2025</span> ABDEDDAIM FARID. <span class="lang-element" data-fr="Tous droits réservés." data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">Tous droits réservés.</span>
+               </p>
+           </div>
+       </div>
+   </footer>
+
+   <script>
+       // Set current year
+       document.getElementById('current-year').textContent = new Date().getFullYear();
+
+       // Mobile menu toggle
+       const mobileMenuButton = document.getElementById('mobile-menu-button');
+       const mobileMenu = document.getElementById('mobile-menu');
+
+       mobileMenuButton.addEventListener('click', () => {
+           mobileMenu.classList.toggle('hidden');
+       });
+
+       // Dark mode toggle
+       const themeToggleButton = document.getElementById('theme-toggle');
+       const html = document.documentElement;
+
+       // Check for saved theme preference or use preferred color scheme
+       if (localStorage.getItem('theme') === 'dark' || 
+           (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+           html.classList.add('dark');
+       } else {
+           html.classList.remove('dark');
+       }
+
+       themeToggleButton.addEventListener('click', () => {
+           html.classList.toggle('dark');
+           localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+       });
+
+       // Language switcher
+       const languageSelector = document.getElementById('language-selector');
+       const langElements = document.querySelectorAll('.lang-element');
+       const navLinks = document.querySelectorAll('.nav-link');
+
+       function updateContent(lang) {
+           langElements.forEach(el => {
+               if (el.dataset[lang]) {
+                   el.textContent = el.dataset[lang];
+               }
+           });
+
+           // Update direction for Arabic
+           if (lang === 'ar') {
+               html.setAttribute('dir', 'rtl');
+           } else {
+               html.setAttribute('dir', 'ltr');
+           }
+
+           // Update language in localStorage
+           localStorage.setItem('language', lang);
+       }
+
+       // Set initial language (from localStorage or default to French)
+       const initialLang = localStorage.getItem('language') || 'fr';
+       languageSelector.value = initialLang;
+       updateContent(initialLang);
+
+       // Language change event
+       languageSelector.addEventListener('change', (e) => {
+           updateContent(e.target.value);
+       });
+
+       // Smooth scrolling for navigation links
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               const targetId = this.getAttribute('href');
+               const targetElement = document.querySelector(targetId);
+               
+               if (targetElement) {
+                   window.scrollTo({
+                       top: targetElement.offsetTop - 64, // Adjust for navbar height
+                       behavior: 'smooth'
+                   });
+                   
+                   // Close mobile menu if open
+                   if (!mobileMenu.classList.contains('hidden')) {
+                       mobileMenu.classList.add('hidden');
+                   }
+               }
+           });
+       });
+   </script>
+</body>
+</html>
