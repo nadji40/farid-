@@ -758,41 +758,7 @@
         document.body.classList.remove('overflow-hidden');
     }
     
-    function updateModalLanguage(modalId, lang) {
-        const modal = document.getElementById(modalId);
-        
-        // Update modal title
-        const title = modal.querySelector('h3.lang-element');
-        if (title && title.dataset[lang]) {
-            title.textContent = title.dataset[lang];
-        }
-        
-        // Update close button
-        const closeBtn = modal.querySelector('button.lang-element');
-        if (closeBtn && closeBtn.dataset[lang]) {
-            closeBtn.textContent = closeBtn.dataset[lang];
-        }
-        
-        // Show correct language content
-        const langContents = modal.querySelectorAll('.lang-specific');
-        langContents.forEach(content => {
-            if (content.dataset.lang === lang) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
-            }
-        });
-    }
-    
-    // Listen for language changes in the main site
-    document.addEventListener('languageChanged', function(e) {
-        const lang = e.detail.language;
-        
-        // Update all open modals
-        const openModals = document.querySelectorAll('.fixed.inset-0.z-50:not(.hidden)');
-        openModals.forEach(modal => {
-            updateModalLanguage(modal.id, lang);
-        });
+
     });
 </script>
 
