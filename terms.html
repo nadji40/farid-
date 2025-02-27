@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr,ar,en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conditions d'Utilisation - Abdeddaim Farid">
+    <meta name="keywords" content="conditions d'utilisation, terms of service, شروط الاستخدام, Abdeddaim Farid">
+    <meta name="author" content="Abdeddaim Farid">
+    <title>Conditions d'Utilisation | Abdeddaim Farid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Include the same style sheets as in the original website -->
+    <style>
+        /* Enhanced styling with more sophisticated gradients and effects */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hero section with dynamic gradient */
+        .hero-gradient {
+            background: linear-gradient(-45deg, #1e40af, #3b82f6, #60a5fa, #2563eb);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+        }
+
+        /* Glass morphism effect for cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Enhanced card hover effects */
+        .hover-card-effect {
+            transition: all 0.5s ease;
+        }
+
+        .hover-card-effect:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Soft shadow for elements */
+        .soft-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 
+                        0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Text gradient effect */
+        .text-gradient {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* RTL support for Arabic */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#3b82f6, #1e40af);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(#1e40af, #3b82f6);
+        }
+
+        /* Language specific adjustments */
+        html[lang="ar"] .terms-content {
+            direction: rtl;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navbar (same as in original) -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-10 w-10 bg-primary-600 dark:bg-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">AF</div>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8" >
+                        <a href="index.html#home" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Accueil" data-en="Home" data-ar="الرئيسية">Accueil</a>
+                        <a href="index.html#services" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a>
+                        <a href="index.html#formations" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a>
+                        <a href="index.html#contact" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative mr-4">
+                        <select id="language-selector" class="appearance-none bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800 focus:border-primary-500">
+                            <option value="fr">Français</option>
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </div>
+                    </div>
+                    <button id="theme-toggle" class="flex items-center justify-center h-10 w-10 rounded-full focus:outline-none">
+                        <i class="fas fa-moon text-gray-600 dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-300 hidden dark:block"></i>
+                    </button>
+                    <div class="ml-2 flex items-center sm:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="sm:hidden hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="index.html#home" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Accueil" data-en="Home" data-ar="الرئيسية">Accueil</a>
+                <a href="index.html#services" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="index.html#formations" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a>
+                <a href="index.html#contact" class="nav-link border-transparent text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Title Section -->
+            <div class="text-center mb-10">
+                <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Conditions d'Utilisation" data-en="Terms of Service" data-ar="شروط الاستخدام">Conditions d'Utilisation</h1>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto lang-element" data-fr="Dernière mise à jour : 27 Février 2025" data-en="Last updated: February 27, 2025" data-ar="آخر تحديث: 27 فبراير 2025">Dernière mise à jour : 27 Février 2025</p>
+            </div>
+
+            <!-- Content tabs for language selection -->
+            <div class="mb-8 border-b border-gray-200 dark:border-gray-700">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" role="tablist">
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 active" id="fr-tab" data-tabs-target="#fr-content" type="button" role="tab" aria-controls="fr-content" aria-selected="true">Français</button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="en-tab" data-tabs-target="#en-content" type="button" role="tab" aria-controls="en-content" aria-selected="false">English</button>
+                    </li>
+                    <li role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="ar-tab" data-tabs-target="#ar-content" type="button" role="tab" aria-controls="ar-content" aria-selected="false">العربية</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- French Content -->
+            <div id="fr-content" role="tabpanel" aria-labelledby="fr-tab" class="terms-content bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Introduction</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Bienvenue sur le site web d'Abdeddaim Farid. En accédant à ce site et en utilisant nos services, vous acceptez d'être lié par les présentes conditions d'utilisation. Veuillez les lire attentivement avant d'utiliser notre site.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">2. Définitions</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"Site" désigne le site web d'Abdeddaim Farid accessible à l'adresse [votre-domaine.com].</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"Services" désigne tous les services de conseil en management et coaching fournis par Abdeddaim Farid.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"Utilisateur" désigne toute personne qui accède au Site et/ou utilise les Services.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">3. Utilisation du Site</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">En utilisant ce Site, vous vous engagez à :</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
+                    <li>Utiliser le Site conformément aux lois et réglementations applicables</li>
+                    <li>Ne pas tenter d'interférer avec le fonctionnement technique du Site</li>
+                    <li>Ne pas utiliser le Site d'une manière qui pourrait l'endommager, le désactiver ou le surcharger</li>
+                    <li>Ne pas accéder illégalement aux systèmes ou données du Site</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">4. Services et Contenu</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Les informations présentées sur le Site sont fournies à titre informatif uniquement. Abdeddaim Farid s'efforce de fournir des informations précises et à jour, mais ne garantit pas l'exactitude, l'exhaustivité ou la pertinence des informations pour des fins particulières.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Les Services de conseil et coaching sont fournis selon les termes spécifiques convenus entre Abdeddaim Farid et le client, qui peuvent faire l'objet d'un contrat distinct.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">5. Propriété Intellectuelle</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Tous les contenus présents sur le Site, incluant sans limitation les textes, graphiques, logos, images, et logiciels, sont la propriété d'Abdeddaim Farid ou de ses fournisseurs de contenu et sont protégés par les lois algériennes et internationales relatives à la propriété intellectuelle.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Toute reproduction, distribution, modification ou utilisation du contenu à des fins commerciales sans autorisation préalable écrite d'Abdeddaim Farid est strictement interdite.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">6. Limitation de Responsabilité</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Abdeddaim Farid ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser le Site ou les Services.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Abdeddaim Farid ne garantit pas que le Site sera exempt d'erreurs, de virus ou d'autres éléments nuisibles, ni que les défauts seront corrigés.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">7. Liens vers des Sites Tiers</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Le Site peut contenir des liens vers des sites web de tiers. Ces liens sont fournis uniquement pour votre commodité. Abdeddaim Farid n'a aucun contrôle sur le contenu de ces sites et n'assume aucune responsabilité quant à leur contenu ou leur utilisation.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">8. Protection des Données</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">L'utilisation de vos données personnelles est régie par notre <a href="privacy.html" class="text-primary-600 dark:text-primary-400 hover:underline">Politique de Confidentialité</a>, qui fait partie intégrante des présentes conditions d'utilisation.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">9. Modifications des Conditions</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Abdeddaim Farid se réserve le droit de modifier ces conditions d'utilisation à tout moment. Les modifications entrent en vigueur dès leur publication sur le Site. Nous vous encourageons à consulter régulièrement cette page pour prendre connaissance des éventuelles modifications.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">10. Droit Applicable et Juridiction</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Les présentes conditions d'utilisation sont régies par le droit algérien. Tout litige relatif à l'interprétation ou à l'exécution des présentes conditions sera soumis à la compétence exclusive des tribunaux d'Alger, Algérie.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">11. Contact</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Pour toute question concernant ces conditions d'utilisation, veuillez nous contacter via notre formulaire de contact sur le site ou par email.</p>
+            </div>
+
+            <!-- English Content -->
+            <div id="en-content" role="tabpanel" aria-labelledby="en-tab" class="terms-content bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8 hidden">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Introduction</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Welcome to Abdeddaim Farid's website. By accessing this site and using our services, you agree to be bound by these terms of service. Please read them carefully before using our site.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">2. Definitions</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"Site" refers to Abdeddaim Farid's website accessible at [your-domain.com].</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"Services" refers to all management consulting and coaching services provided by Abdeddaim Farid.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"User" refers to any person who accesses the Site and/or uses the Services.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">3. Use of the Site</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">By using this Site, you agree to:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-700 dark:text-gray-300">
+                    <li>Use the Site in accordance with applicable laws and regulations</li>
+                    <li>Not attempt to interfere with the technical operation of the Site</li>
+                    <li>Not use the Site in a way that could damage, disable, or overburden it</li>
+                    <li>Not illegally access the Site's systems or data</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">4. Services and Content</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">The information presented on the Site is provided for informational purposes only. Abdeddaim Farid strives to provide accurate and up-to-date information but does not guarantee the accuracy, completeness, or relevance of the information for particular purposes.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Consulting and coaching Services are provided according to specific terms agreed between Abdeddaim Farid and the client, which may be subject to a separate contract.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">5. Intellectual Property</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">All content on the Site, including but not limited to text, graphics, logos, images, and software, is the property of Abdeddaim Farid or its content providers and is protected by Algerian and international intellectual property laws.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Any reproduction, distribution, modification, or use of the content for commercial purposes without prior written authorization from Abdeddaim Farid is strictly prohibited.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">6. Limitation of Liability</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Abdeddaim Farid shall not be liable for any direct or indirect damages resulting from the use or inability to use the Site or Services.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Abdeddaim Farid does not guarantee that the Site will be free from errors, viruses, or other harmful elements, nor that defects will be corrected.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">7. Links to Third-Party Sites</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">The Site may contain links to third-party websites. These links are provided solely for your convenience. Abdeddaim Farid has no control over the content of these sites and assumes no responsibility for their content or use.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">8. Data Protection</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">The use of your personal data is governed by our <a href="privacy.html" class="text-primary-600 dark:text-primary-400 hover:underline">Privacy Policy</a>, which forms an integral part of these terms of service.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">9. Modifications to the Terms</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">Abdeddaim Farid reserves the right to modify these terms of service at any time. Modifications take effect as soon as they are published on the Site. We encourage you to regularly check this page to stay informed of any changes.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">10. Applicable Law and Jurisdiction</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">These terms of service are governed by Algerian law. Any dispute relating to the interpretation or execution of these terms will be subject to the exclusive jurisdiction of the courts of Algiers, Algeria.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">11. Contact</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">For any questions regarding these terms of service, please contact us via our contact form on the website or by email.</p>
+            </div>
+
+            <!-- Arabic Content -->
+            <div id="ar-content" role="tabpanel" aria-labelledby="ar-tab" class="terms-content bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8 hidden" dir="rtl">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. مقدمة</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">مرحبًا بكم في موقع عبد الدايم فريد. باستخدامكم لهذا الموقع والخدمات المقدمة، فإنكم توافقون على الالتزام بشروط الاستخدام هذه. يرجى قراءتها بعناية قبل استخدام موقعنا.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">2. التعريفات</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"الموقع" يشير إلى موقع عبد الدايم فريد الإلكتروني المتاح على [your-domain.com].</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"الخدمات" تشير إلى جميع خدمات الاستشارات الإدارية والتدريب التي يقدمها عبد الدايم فريد.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">"المستخدم" يشير إلى أي شخص يصل إلى الموقع و/أو يستخدم الخدمات.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">3. استخدام الموقع</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">باستخدامك لهذا الموقع، فإنك تتعهد بما يلي:</p>
+                <ul class="list-disc pr-6 mb-4 text-gray-700 dark:text-gray-300">
+                    <li>استخدام الموقع وفقًا للقوانين واللوائح المعمول بها</li>
+                    <li>عدم محاولة التدخل في التشغيل التقني للموقع</li>
+                    <li>عدم استخدام الموقع بطريقة قد تؤدي إلى إتلافه أو تعطيله أو إثقال كاهله</li>
+                    <li>عدم الوصول بشكل غير قانوني إلى أنظمة أو بيانات الموقع</li>
+                </ul>
+                
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">4. الخدمات والمحتوى</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">المعلومات المقدمة على الموقع هي لأغراض إعلامية فقط. يسعى عبد الدايم فريد إلى توفير معلومات دقيقة ومحدثة، ولكنه لا يضمن دقة أو اكتمال أو ملاءمة المعلومات لأغراض معينة.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">يتم تقديم خدمات الاستشارات والتدريب وفقًا للشروط المحددة المتفق عليها بين عبد الدايم فريد والعميل، والتي قد تخضع لعقد منفصل.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">5. الملكية الفكرية</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">جميع المحتويات الموجودة على الموقع، بما في ذلك على سبيل المثال لا الحصر النصوص والرسومات والشعارات والصور والبرامج، هي ملك لعبد الدايم فريد أو مزودي المحتوى الخاصين به وهي محمية بموجب القوانين الجزائرية والدولية المتعلقة بالملكية الفكرية.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">يُمنع منعاً باتاً أي نسخ أو توزيع أو تعديل أو استخدام للمحتوى لأغراض تجارية دون إذن كتابي مسبق من عبد الدايم فريد.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">6. حدود المسؤولية</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">لن يكون عبد الدايم فريد مسؤولاً عن أي أضرار مباشرة أو غير مباشرة ناتجة عن استخدام أو عدم القدرة على استخدام الموقع أو الخدمات.</p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">لا يضمن عبد الدايم فريد أن الموقع سيكون خاليًا من الأخطاء أو الفيروسات أو غيرها من العناصر الضارة، ولا أنه سيتم تصحيح العيوب.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">7. روابط لمواقع الغير</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">قد يحتوي الموقع على روابط لمواقع ويب تابعة لجهات خارجية. يتم توفير هذه الروابط فقط لراحتك. ليس لعبد الدايم فريد أي سيطرة على محتوى هذه المواقع ولا يتحمل أي مسؤولية عن محتواها أو استخدامها.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">8. حماية البيانات</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">يخضع استخدام بياناتك الشخصية لـ <a href="privacy.html" class="text-primary-600 dark:text-primary-400 hover:underline">سياسة الخصوصية</a> الخاصة بنا، والتي تشكل جزءًا لا يتجزأ من شروط الاستخدام هذه.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">9. تعديلات الشروط</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">يحتفظ عبد الدايم فريد بالحق في تعديل شروط الاستخدام هذه في أي وقت. تصبح التعديلات سارية المفعول بمجرد نشرها على الموقع. نشجعك على التحقق من هذه الصفحة بانتظام للاطلاع على أي تغييرات محتملة.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">10. القانون المطبق والاختصاص القضائي</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">تخضع شروط الاستخدام هذه للقانون الجزائري. يخضع أي نزاع يتعلق بتفسير أو تنفيذ هذه الشروط للاختصاص القضائي الحصري لمحاكم الجزائر العاصمة، الجزائر.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-8">11. الاتصال</h2>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">لأي استفسارات بخصوص شروط الاستخدام هذه، يرجى الاتصال بنا عبر نموذج الاتصال على الموقع أو عبر البريد الإلكتروني.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 pt-10 pb-6 mt-10 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 lang-element" data-fr="À Propos" data-en="About" data-ar="حول">À Propos</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 lang-element" data-fr="Abdeddaim Farid est un expert en conseil en management et coaching, offrant des solutions personnalisées pour les entreprises et les professionnels." data-en="Abdeddaim Farid is an expert in management consulting and coaching, offering personalized solutions for businesses and professionals." data-ar="عبد الدايم فريد خبير في استشارات الإدارة والتدريب، يقدم حلولاً مخصصة للشركات والمحترفين.">Abdeddaim Farid est un expert en conseil en management et coaching, offrant des solutions personnalisées pour les entreprises et les professionnels.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 lang-element" data-fr="Liens Utiles" data-en="Useful Links" data-ar="روابط مفيدة">Liens Utiles</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#services" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 lang-element" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a></li>
+                        <li><a href="index.html#formations" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 lang-element" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a></li>
+                        <li><a href="privacy.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 lang-element" data-fr="Politique de Confidentialité" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Politique de Confidentialité</a></li>
+                        <li><a href="terms.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 lang-element" data-fr="Conditions d'Utilisation" data-en="Terms of Service" data-ar="شروط الاستخدام">Conditions d'Utilisation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 lang-element" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Alger, Algérie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                            <a href="mailto:contact@example.com" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">contact@example.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                            <a href="tel:+123456789" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">+123 456 789</a>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-center">
+                <p class="text-gray-500 dark:text-gray-400">© 2025 Abdeddaim Farid. <span class="lang-element" data-fr="Tous droits réservés." data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check for saved theme preference or use user's OS preference
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // Toggle dark/light mode
+        themeToggle.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            
+            // Save preference to localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language switching functionality
+        const languageSelector = document.getElementById('language-selector');
+        const langElements = document.querySelectorAll('.lang-element');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            // Update all language-specific elements
+            langElements.forEach(element => {
+                if (element.dataset[lang]) {
+                    element.textContent = element.dataset[lang];
+                }
+            });
+            
+            // Update navigation links
+            navLinks.forEach(link => {
+                if (link.dataset[lang]) {
+                    link.textContent = link.dataset[lang];
+                }
+            });
+            
+            // Store the selected language
+            localStorage.setItem('selected-language', lang);
+        }
+        
+        // Initialize with the saved language or default to French
+        const savedLanguage = localStorage.getItem('selected-language') || 'fr';
+        languageSelector.value = savedLanguage;
+        setLanguage(savedLanguage);
+        
+        // Change language when selector changes
+        languageSelector.addEventListener('change', function() {
+            setLanguage(this.value);
+        });
+        
+        // Tab functionality for language content
+        const tabs = document.querySelectorAll('[role="tab"]');
+        const tabContents = document.querySelectorAll('[role="tabpanel"]');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Deactivate all tabs
+                tabs.forEach(t => {
+                    t.classList.remove('border-primary-600', 'text-primary-600', 'dark:text-primary-400', 'dark:border-primary-400', 'active');
+                    t.classList.add('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300', 'dark:hover:text-gray-300');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Activate current tab
+                this.classList.remove('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300', 'dark:hover:text-gray-300');
+                this.classList.add('border-primary-600', 'text-primary-600', 'dark:text-primary-400', 'dark:border-primary-400', 'active');
+                this.setAttribute('aria-selected', 'true');
+                
+                // Show corresponding content
+                const targetId = this.getAttribute('data-tabs-target');
+                const targetContent = document.querySelector(targetId);
+                targetContent.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
