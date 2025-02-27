@@ -22,38 +22,161 @@
         }
     </script>
     <style>
-        /* Custom CSS for animations and effects */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* Enhanced styling with more sophisticated gradients and effects */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+/* Hero section with dynamic gradient */
+.hero-gradient {
+    background: linear-gradient(-45deg, #1e40af, #3b82f6, #60a5fa, #2563eb);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+/* Glass morphism effect for cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
 
-        .hero-animation { animation: fadeInUp 1s ease-out, float 4s ease-in-out infinite; }
-        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
-        .animated-button { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .animated-button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
-        .modal-enter { animation: scaleIn 0.3s ease-out; }
-        .floating-icon { animation: float 3s ease-in-out infinite; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .animated-gradient { background: linear-gradient(270deg, #3b82f6, #1e40af, #1e3a8a); background-size: 600% 600%; animation: gradientShift 10s ease infinite; }
+.dark .glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+/* Enhanced card hover effects */
+.hover-card-effect {
+    transition: all 0.5s ease;
+}
+
+.hover-card-effect:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Soft shadow for elements */
+.soft-shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 
+                0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Text gradient effect */
+.text-gradient {
+    background: linear-gradient(90deg, #3b82f6, #1e40af);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Button gradient */
+.btn-gradient {
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-gradient:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #1e40af, #3b82f6);
+    transition: all 0.3s ease;
+    z-index: -1;
+    border-radius: 0.5rem;
+}
+
+.btn-gradient:hover:before {
+    width: 100%;
+}
+
+/* Floating elements animation */
+.floating-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Custom border gradient */
+.border-gradient {
+    border: 2px solid;
+    border-image: linear-gradient(to right, #3b82f6, #1e40af) 1;
+}
+
+/* Improved section transitions */
+.section-transition {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-transition:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.9));
+    pointer-events: none;
+}
+
+.dark .section-transition:after {
+    background: linear-gradient(to bottom, transparent, rgba(17, 24, 39, 0.9));
+}
+
+/* Nav item hover effect */
+.nav-hover-effect {
+    position: relative;
+}
+
+.nav-hover-effect:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, #3b82f6, #1e40af);
+    transition: width 0.3s ease;
+}
+
+.nav-hover-effect:hover:after {
+    width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#3b82f6, #1e40af);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#1e40af, #3b82f6);
+}
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
