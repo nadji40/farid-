@@ -231,6 +231,19 @@
     transform: translateY(-5px) scale(1.05);
     transition: transform 0.3s ease;
 }
+        /* Make nav titles visible and properly aligned on mobile */
+#mobile-menu .nav-link {
+    text-align: center;
+    display: block;
+}
+
+/* Ensure hero section text is centered on mobile */
+@media (max-width: 640px) {
+    .hero-animation h1,
+    .hero-animation p {
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
