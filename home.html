@@ -716,25 +716,19 @@
             const lang = e.target.value;
             changeLanguage(lang);
         });
-
-        function changeLanguage(lang) {
-            document.documentElement.lang = lang;
-            
-            langElements.forEach(el => {
-                if (el.dataset[lang]) {
-                    el.innerText = el.dataset[lang];
-                }
-            });
-
-            // Update active navigation links
-            navLinks.forEach(link => {
-                if (link.classList.contains('border-primary-500')) {
-                    if (link.dataset[lang]) {
-                        link.innerText = link.dataset[lang];
-                    }
-                }
-            });
+function changeLanguage(lang) {
+    document.documentElement.lang = lang;
+    langElements.forEach(el => {
+        if (el.dataset[lang]) {
+            el.innerText = el.dataset[lang];
         }
+    });
+    navLinks.forEach(link => {
+        if (link.dataset[lang]) {
+            link.innerText = link.dataset[lang];
+        }
+    });
+}
 
         // Modals
         function openModal(modalId) {
@@ -746,7 +740,23 @@
             document.getElementById(modalId).classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-
+document.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 60) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('border-primary-500');
+        if (link.getAttribute('href').includes(currentSection)) {
+            link.classList.add('border-primary-500');
+        }
+    });
+});
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modals = document.querySelectorAll('[id$="Modal"]');
