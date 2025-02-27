@@ -177,6 +177,60 @@
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(#1e40af, #3b82f6);
 }
+
+
+/* New fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* New slide-in animations */
+@keyframes slideInLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out;
+}
+
+.slide-in-up {
+    animation: slideInUp 1s ease-out;
+}
+
+.slide-in-down {
+    animation: slideInDown 1s ease-out;
+}
+
+/* Enhanced button hover effects */
+.btn-dynamic:hover {
+    transform: translateY(-5px) scale(1.05);
+    transition: transform 0.3s ease;
+}
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -193,7 +247,7 @@
                         <a href="#services" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Services" data-en="Services" data-ar="الخدمات">Services</a>
                         <a href="#courses" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Cours" data-en="Courses" data-ar="الدورات">Cours</a>
                         <a href="#formations" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Formations" data-en="Training" data-ar="التدريب">Formations</a>
-                        <a href="#contact" class="nav-link border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:text-gray-700 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                        <a href="#contact" class="class="hero-animation bg-white text-primary-600 hover:bg-primary-50 font-bold px-6 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 btn-dynamic lang-element"" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
                     </div>
                 </div>
                 <div class="flex items-center">
@@ -232,7 +286,7 @@
     <!-- Main Content -->
     <main class="pt-16">
         <!-- Hero Section -->
-        <section id="home" class="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white pt-16 pb-32 overflow-hidden">
+        <section id="home" class="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white pt-16 pb-32 overflow-hidden fade-in">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="md:flex md:items-center md:justify-between">
                     <div class="md:w-1/2">
@@ -260,7 +314,7 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white dark:bg-gray-800">
+        <section id="services" class="py-20 bg-white dark:bg-gray-800 slide-in-up">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Mes Services" data-en="My Services" data-ar="خدماتي">Mes Services</h2>
@@ -316,7 +370,7 @@
         </section>
 
         <!-- Formations Section -->
-        <section id="formations" class="py-20 bg-white dark:bg-gray-800 animated-gradient">
+        <section id="formations" class="py-20 bg-white dark:bg-gray-800 animated-gradient slide-in-left">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Formations" data-en="Training Programs" data-ar="برامج التدريب">Formations</h2>
@@ -376,7 +430,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900 fade-in">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl lang-element" data-fr="Contact" data-en="Contact" data-ar="اتصل بنا">Contact</h2>
@@ -736,6 +790,35 @@
                 }
             });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down');
+
+    function reveal() {
+        for (let i = 0; i < fadeInElements.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = fadeInElements[i].getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                fadeInElements[i].classList.add('active');
+            }
+        }
+
+        for (let i = 0; i < slideInElements.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = slideInElements[i].getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                slideInElements[i].classList.add('active');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal(); // Initial check
+});
     </script>
 </body>
 </html>
