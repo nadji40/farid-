@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr,ar,en">
 <head>
-    <!-- Meta tags and title remain the same -->
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdeddaim Farid - Conseil en Management et Coaching. Expertise professionnelle en gestion et développement personnel.">
+    <meta name="keywords" content="management, coaching, formation, conseil, développement personnel">
+    <meta name="author" content="Abdeddaim Farid">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -124,6 +128,258 @@
     <!-- JavaScript would remain largely the same, but with updated selectors -->
     <script>
         // Similar JavaScript as in your original code, adjusted for new class names
+        // Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('visible');
+});
+
+// Dark mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const moonIcon = themeToggle.querySelector('.fa-moon');
+const sunIcon = themeToggle.querySelector('.fa-sun');
+
+// Check for saved theme preference or use system preference
+if (localStorage.getItem('theme') === 'dark' || 
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    moonIcon.style.display = 'none';
+    sunIcon.style.display = 'block';
+} else {
+    document.documentElement.classList.remove('dark');
+    moonIcon.style.display = 'block';
+    sunIcon.style.display = 'none';
+}
+
+// Toggle theme when button is clicked
+themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    
+    if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+    } else {
+        localStorage.setItem('theme', 'light');
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+    }
+});
+
+// Language switcher
+const languageSelector = document.getElementById('language-selector');
+const langElements = document.querySelectorAll('.lang-element');
+
+// Check for saved language preference or default to French
+const savedLanguage = localStorage.getItem('language') || 'fr';
+languageSelector.value = savedLanguage;
+changeLanguage(savedLanguage);
+
+languageSelector.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    localStorage.setItem('language', lang);
+    changeLanguage(lang);
+});
+
+function changeLanguage(lang) {
+    document.documentElement.lang = lang;
+    
+    // Handle RTL for Arabic
+    if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+    } else {
+        document.documentElement.dir = 'ltr';
+    }
+    
+    langElements.forEach(el => {
+        if (el.dataset[lang]) {
+            el.innerText = el.dataset[lang];
+        }
+    });
+}
+
+// Splash screen handler
+document.addEventListener('DOMContentLoaded', function() {
+    const splashScreen = document.getElementById('splashScreen');
+    const currentLang = languageSelector ? languageSelector.value : 'fr';
+    
+    // Apply current language to splash screen elements
+    if (currentLang) {
+        const splashElements = splashScreen.querySelectorAll('.lang-element');
+        splashElements.forEach(el => {
+            if (el.dataset[currentLang]) {
+                el.innerText = el.dataset[currentLang];
+            }
+        });
+    }
+    
+    // Hide splash screen after timeout
+    setTimeout(function() {
+        splashScreen.style.opacity = '0';
+        splashScreen.style.visibility = 'hidden';
+        document.body.style.overflow = 'auto'; // Enable scrolling
+    }, 3000);
+});
+
+// Initially disable scrolling during splash screen
+document.body.style.overflow = 'hidden';
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (mobileMenu.classList.contains('visible')) {
+                mobileMenu.classList.remove('visible');
+            }
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelectorAll(`a[href="${targetId}"]`).forEach(link => {
+                link.classList.add('active');
+            });
+        }
+    });
+});
+
+// Scroll animations for elements
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down');
+    
+    const animateOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+        
+        animatedElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            
+            if (elementTop < triggerBottom) {
+                element.classList.add('active');
+            }
+        });
+    };
+    
+    // Check elements on initial load
+    animateOnScroll();
+    
+    // Check elements on scroll
+    window.addEventListener('scroll', animateOnScroll);
+});
+
+// Active nav highlighting based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSection = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const navHeight = document.querySelector('nav').offsetHeight;
+        
+        if (window.scrollY >= sectionTop - navHeight - 50) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Handle form submissions (if you have forms)
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Example validation - customize as needed
+        let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
+            }
+        });
+        
+        if (isValid) {
+            // Show success message or submit form via AJAX
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.textContent = 'Form submitted successfully!';
+            form.appendChild(successMessage);
+            
+            // Reset form after submission
+            form.reset();
+            
+            // Remove success message after a delay
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+        }
+    });
+});
+
+// Add mouseover animations for buttons
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+        button.classList.add('animated');
+    });
+    
+    button.addEventListener('mouseleave', () => {
+        button.classList.remove('animated');
+    });
+});
+
+// Lazy loading for images
+if ('loading' in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    lazyImages.forEach(img => {
+        img.src = img.dataset.src;
+    });
+} else {
+    // Fallback for browsers without native lazy loading
+    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImageObserver.unobserve(lazyImage);
+            }
+        });
+    });
+    
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    lazyImages.forEach(img => {
+        lazyImageObserver.observe(img);
+    });
+}
     </script>
 </body>
 </html>
